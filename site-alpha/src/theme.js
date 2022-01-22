@@ -1,6 +1,6 @@
 import defaultTheme from "../../shared-components/default-theme"
 
-// use shared template and extextend it with custom theme values
+// use shared template and extend/override with custom theme values
 const siteTheme = {
   colors: {
     ...defaultTheme.colors,
