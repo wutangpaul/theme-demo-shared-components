@@ -7,16 +7,16 @@ import theme from "../theme.js"
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
-    <Widget description="Shared component that inherits colors.brand site level theme value by default" />
+    <Widget description="Shared component that inherits colors.text and colors.background site level theme values by default" />
     <code>{`<Widget description="blah" />`}</code>
     <br />
     <br />
 
     <Widget
-      description="Overrides colors.brand value with a different theme value (colors.background)"
+      description="Override background and text colors with different values from site level theme, or abritrary/once-off values. Also toggles the monkey boolean."
       sx={{
         backgroundColor: theme.colors.highlight,
-        textColor: theme.colors.muted,
+        textColor: "orangered",
       }}
       showMonkey
     />

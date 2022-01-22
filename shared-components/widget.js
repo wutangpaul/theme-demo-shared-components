@@ -12,6 +12,7 @@ const WidgetContainer = styled.div`
 `;
 
 const Widget = ({ description, showMonkey, sx }) => {
+  console.log(sx);
   return (
     <>
       <WidgetContainer sx={sx}>
