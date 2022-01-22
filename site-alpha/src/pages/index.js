@@ -7,7 +7,7 @@ import theme from "../theme.js"
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
-    <Widget description="Shared component that inherits colors.brand value by default" />
+    <Widget description="Shared component that inherits colors.brand site level theme value by default" />
     <code>{`<Widget description="blah" />`}</code>
     <br />
     <br />
@@ -18,10 +18,11 @@ const IndexPage = () => (
         backgroundColor: theme.colors.highlight,
         textColor: theme.colors.muted,
       }}
+      showMonkey
     />
 
     <code>
-      {`<Widget description="blah..." sx={{ backgroundColor: theme.colors.highlight, textColor: theme.colors.background }} />`}
+      {`<Widget description="blah..." sx={{ backgroundColor: theme.colors.highlight, textColor: theme.colors.background }} showMonkey />`}
     </code>
   </Layout>
 )

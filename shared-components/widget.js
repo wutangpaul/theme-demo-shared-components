@@ -11,12 +11,18 @@ const WidgetContainer = styled.div`
     props.sx.backgroundColor || props.theme.colors.background};
 `;
 
-const Widget = ({ description, sx }) => {
+const Widget = ({ description, showMonkey, sx }) => {
   return (
     <>
       <WidgetContainer sx={sx}>
         <h1>Widget component</h1>
-        <div className="widget-body">{description}</div>
+        <p>{description}</p>
+        {showMonkey && (
+          <img
+            src="https://i.giphy.com/media/5Zesu5VPNGJlm/giphy.webp"
+            alt="monkey"
+          />
+        )}
       </WidgetContainer>
     </>
   );
@@ -24,6 +30,7 @@ const Widget = ({ description, sx }) => {
 
 Widget.propTypes = {
   description: PropTypes.node.isRequired,
+  showMonkey: PropTypes.bool,
   sx: PropTypes.shape({
     backgroundColor: PropTypes.string,
     textColor: PropTypes.string,
@@ -31,6 +38,7 @@ Widget.propTypes = {
 };
 
 Widget.defaultProps = {
+  showMonkey: false,
   sx: {
     backgroundColor: null,
     textColor: null,
