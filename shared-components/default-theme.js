@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 
-// shared default theme
-// each site's theme will be subset of this shared default theme
-// each shared component will us this as it's default theme props
+// Shared default theme object
+// each site's theme will get this automatically and can be overridden
+// in the site's theme object
 
 const DefaultTheme = {
   colors: {
@@ -14,6 +14,10 @@ const DefaultTheme = {
     text: "#333",
   },
 };
+
+// Shared default theme props
+// each shared component will receive this automatically,
+// keeping it in line with the DefaultTheme object
 
 const DefaultThemeProps = PropTypes.shape({
   colors: PropTypes.shape({
