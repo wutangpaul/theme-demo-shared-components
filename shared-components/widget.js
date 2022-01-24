@@ -7,7 +7,10 @@ const WidgetContainer = styled.div`
   padding: 1rem;
   margin-bottom: 1rem;
   border: solid 1px ${(props) => props.theme.colors.border}; // didn't destructure on purpose, please don't moan
-  color: ${(props) => props.sx.textColor || props.theme.colors.text};
+  color: ${(props) =>
+    props.sx.textColor ||
+    props.theme.colors
+      .text}; // 1. sx override -> 2. inherit from site theme -> 3. inherit from default shared theme
   background-color: ${(props) =>
     props.sx.backgroundColor || props.theme.colors.background};
 `;
