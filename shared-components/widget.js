@@ -6,7 +6,8 @@ import { DefaultTheme, DefaultThemeProps } from "./default-theme";
 const WidgetContainer = styled.div`
   padding: 1rem;
   margin-bottom: 1rem;
-  border: solid 1px ${(props) => props.theme.colors.border}; // didn't destructure on purpose, please don't moan
+  // didn't destructure on purpose, please don't moan about it
+  border: solid 1px ${(props) => props.theme.colors.border}; // 1. inherit from site theme -> 2. inherit from default shared theme
   color: ${(props) =>
     props.sx.textColor ||
     props.theme.colors
