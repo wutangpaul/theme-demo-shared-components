@@ -6,18 +6,19 @@ import { DefaultTheme, DefaultThemeProps } from "./default-theme";
 const WidgetContainer = styled.div`
   padding: 1rem;
   margin-bottom: 1rem;
-  border: solid 1px ${(props) => props.theme.colors.border}; // didn't destructure on purpose, don't whine
+  border: solid 1px ${(props) => props.theme.colors.border}; // didn't destructure on purpose, please don't moan
   color: ${(props) => props.sx.textColor || props.theme.colors.text};
   background-color: ${(props) =>
     props.sx.backgroundColor || props.theme.colors.background};
 `;
 
 const Widget = ({ description, showMonkey, sx }) => {
-  /* Widget automatically gets site theme from the shared theme provider context. */
+  /* Component automatically receives 'theme' prop 
+    from the shared theme provider context. */
 
-  /* sx is a prop that can be used to override the site theme. */
+  /* sx is an optional prop that can be used to override the values passed by the site theme. */
 
-  /* If for some reason a theme's value is not defined in the site theme, 
+  /* If, for some reason a theme's value is not defined in the site theme, 
     it will automatically fallback to the shared default theme. */
 
   return (
