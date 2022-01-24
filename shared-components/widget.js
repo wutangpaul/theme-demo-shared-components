@@ -6,14 +6,20 @@ import { DefaultTheme, DefaultThemeProps } from "./default-theme";
 const WidgetContainer = styled.div`
   padding: 1rem;
   margin-bottom: 1rem;
+
   // didn't destructure on purpose, please don't moan about it
-  border: solid 1px ${(props) => props.theme.colors.border}; // 1. inherit from site theme -> 2. inherit from default shared theme
+
+  border: solid 1px ${(props) => props.theme.colors.border}; // 1. inherit from site theme -> 2. inherit from default shared theme via defaultProps
+
   color: ${(props) =>
     props.sx.textColor ||
     props.theme.colors
-      .text}; // 1. sx override -> 2. inherit from site theme -> 3. inherit from default shared theme
+      .text}; // 1. sx override -> 2. inherit from site theme -> 3. inherit from default shared theme via defaultProps
+
   background-color: ${(props) =>
-    props.sx.backgroundColor || props.theme.colors.background};
+    props.sx.backgroundColor ||
+    props.theme.colors
+      .background}; // 1. sx override -> 2. inherit from site theme -> 3. inherit from default shared theme via defaultProps
 `;
 
 const Widget = ({ description, showMonkey, sx }) => {
