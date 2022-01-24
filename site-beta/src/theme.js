@@ -4,7 +4,8 @@ import { DefaultTheme } from "../../shared-components/default-theme"
 const siteTheme = {
   colors: {
     ...DefaultTheme.colors,
-    background: "#f09",
+    background: "#BADA55", // override shared default theme
+    highlight: "#00A3C4", // override shared default theme
   },
 }
 

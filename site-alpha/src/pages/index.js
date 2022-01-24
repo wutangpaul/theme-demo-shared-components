@@ -2,7 +2,7 @@ import * as React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Widget from "../../../shared-components/widget"
-import theme from "../theme.js"
+import SiteTheme from "../theme.js"
 
 const IndexPage = () => (
   <Layout>
@@ -15,7 +15,7 @@ const IndexPage = () => (
     <Widget
       description="Override background and text colors with different values from site level theme, or abritrary/once-off values. Also toggles the monkey boolean."
       sx={{
-        backgroundColor: theme.colors.highlight,
+        backgroundColor: SiteTheme.colors.highlight,
         textColor: "orangered",
       }}
       showMonkey

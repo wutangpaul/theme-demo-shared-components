@@ -1,30 +1,29 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Widget from "../../../shared-components/widget"
+import SiteTheme from "../theme.js"
 
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["auto", "webp", "avif"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
+    <Widget description="Shared component that inherits colors.text and colors.background site level theme values by default" />
+    <code>{`<Widget description="blah" />`}</code>
+    <br />
+    <br />
+
+    <Widget
+      description="Override background and text colors with different values from site level theme, or abritrary/once-off values. Also toggles the monkey boolean."
+      sx={{
+        backgroundColor: SiteTheme.colors.highlight,
+        textColor: "#D8F8FF",
+      }}
+      showMonkey
     />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link> <br />
-      <Link to="/using-ssr">Go to "Using SSR"</Link> <br />
-      <Link to="/using-dsg">Go to "Using DSG"</Link>
-    </p>
+
+    <code>
+      {`<Widget description="blah..." sx={{ backgroundColor: theme.colors.highlight, textColor: theme.colors.background }} showMonkey />`}
+    </code>
   </Layout>
 )
 

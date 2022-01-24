@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { SharedThemeProvider } from "../../../shared-components/shared-theme-provider"
 import Header from "./header"
 import "./layout.css"
-import theme from "../theme.js"
+import SiteTheme from "../theme.js"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <SharedThemeProvider theme={theme}>
+    <SharedThemeProvider theme={SiteTheme}>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
         style={{
